@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-light text-text-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-blue to-primary-light text-white font-semibold px-6 py-3 rounded-lg shadow-warm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary-blue border-2 border-primary-blue font-semibold px-6 py-3 rounded-lg hover:bg-primary-blue hover:text-white transition-all duration-300;
+  }
+  
+  .btn-warm {
+    @apply bg-gradient-to-r from-accent-orange to-accent-warm text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-blue focus:outline-none transition-colors duration-200 placeholder-gray-400;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-blue to-primary-light bg-clip-text text-transparent;
+  }
+  
+  .shadow-warm {
+    box-shadow: 0 8px 25px -5px rgba(79, 70, 229, 0.1);
+  }
+}
+

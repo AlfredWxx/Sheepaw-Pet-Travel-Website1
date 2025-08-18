@@ -1,0 +1,103 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { Heart, Menu, X } from 'lucide-react'
+import Link from 'next/link'
+import { useI18n } from '@/lib/contexts/I18nContext'
+import LanguageSwitcher from './LanguageSwitcher'
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const { t, locale } = useI18n()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/90 backdrop-blur-md shadow-md' 
+        : 'bg-transparent'
+    }`}>
+      <div className="container-max">
+        <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+          {/* Logo */}
+          <Link href={`/${locale}`} className="flex items-center space-x-2 group">
+            <div className="p-2 bg-gradient-to-r from-primary-blue to-primary-light rounded-full group-hover:scale-110 transition-transform duration-300">
+              <Heart className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-xl font-bold text-gradient">Sheepaw</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href={`/${locale}`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
+              {t.nav.home}
+            </Link>
+            <Link href={`/${locale}#services`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
+              {t.nav.services}
+            </Link>
+            <Link href={`/${locale}#contact`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
+              {t.nav.contact}
+            </Link>
+            <LanguageSwitcher />
+            <Link href={`/${locale}#contact`} className="btn-primary">
+              {t.nav.freeConsultation}
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200">
+            <div className="px-4 py-4 space-y-4">
+              <Link 
+                href={`/${locale}`} 
+                className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                {t.nav.home}
+              </Link>
+              <Link 
+                href={`/${locale}#services`} 
+                className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                {t.nav.services}
+              </Link>
+              <Link 
+                href={`/${locale}#contact`} 
+                className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                {t.nav.contact}
+              </Link>
+              <LanguageSwitcher className="block" />
+              <Link 
+                href={`/${locale}#contact`} 
+                className="btn-primary inline-block"
+                onClick={() => setIsOpen(false)}
+              >
+                {t.nav.freeConsultation}
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  )
+}
