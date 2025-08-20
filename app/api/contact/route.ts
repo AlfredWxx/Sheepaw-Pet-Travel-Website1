@@ -13,26 +13,26 @@ const transporter = nodemailer.createTransport({
 // 多语言邮件模板
 const emailTemplates = {
   zh: {
-    customerSubject: '💝 感谢您的信任 - 我们将尽快与您联系',
-    companySubject: '🐾 新的客户咨询 - 需要及时跟进',
+    customerSubject: '感谢您的信任 - 我们将尽快与您联系',
+    companySubject: '新的客户咨询 - 需要及时跟进',
     customerTemplate: (name: string, petType: string, route: string, timeline: string) => `
       <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #4F46E5; margin-bottom: 10px;">💝 感谢您的信任</h1>
+          <h1 style="color: #4F46E5; margin-bottom: 10px;">感谢您的信任</h1>
           <p style="color: #6B7280; font-size: 18px;">我们将尽快与您联系</p>
         </div>
         
         <div style="background: #F9FAFB; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-          <h2 style="color: #1F2937; margin-bottom: 15px;">📋 我们已收到您的咨询：</h2>
+          <h2 style="color: #1F2937; margin-bottom: 15px;">我们已收到您的咨询：</h2>
           <ul style="color: #6B7280; line-height: 1.6;">
-            <li>🐾 毛孩子: ${petType}</li>
-            <li>✈️ 路线: ${route}</li>
-            <li>⏰ 时间: ${timeline}</li>
+            <li>宠物: ${petType}</li>
+            <li>路线: ${route}</li>
+            <li>时间: ${timeline}</li>
           </ul>
         </div>
         
         <div style="background: #EEF2FF; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-          <h2 style="color: #1F2937; margin-bottom: 15px;">💝 我们承诺：</h2>
+          <h2 style="color: #1F2937; margin-bottom: 15px;">我们的承诺：</h2>
           <ul style="color: #4F46E5; line-height: 1.6;">
             <li>✓ 24小时内专业顾问联系您</li>
             <li>✓ 为您定制最适合的方案</li>
@@ -43,19 +43,19 @@ const emailTemplates = {
         
         <div style="text-align: center; margin-bottom: 30px;">
           <p style="color: #6B7280; margin-bottom: 15px;">如有紧急需求，请随时联系我们：</p>
-          <p style="color: #4F46E5; font-weight: 600;">📞 +1 (555) 123-4567</p>
-          <p style="color: #4F46E5; font-weight: 600;">💬 微信: sheepaw_pet</p>
+          <p style="color: #4F46E5; font-weight: 600;">加拿大：+1 (249) 688-3003</p>
+          <p style="color: #4F46E5; font-weight: 600;">中国：+86 135-2285-3556 | 微信: sheepaw_pet</p>
         </div>
         
         <div style="text-align: center; color: #6B7280; font-size: 14px;">
-          <p>让我们一起守护毛孩子的每一步 🐾</p>
+          <p>让我们一起守护宠物旅程的每一步</p>
           <p style="margin-top: 10px; font-weight: 600;">温馨的Sheepaw团队</p>
         </div>
       </div>
     `,
     companyTemplate: (name: string, phone: string, email: string, petType: string, route: string, timeline: string, message: string) => `
       <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h1 style="color: #4F46E5;">🐾 新的客户咨询</h1>
+        <h1 style="color: #4F46E5;">新的客户咨询</h1>
         
         <div style="background: #F9FAFB; padding: 20px; border-radius: 12px; margin: 20px 0;">
           <h2 style="color: #1F2937; margin-bottom: 15px;">客户信息：</h2>
@@ -86,26 +86,26 @@ const emailTemplates = {
     }
   },
   fr: {
-    customerSubject: '💝 Merci pour votre confiance - Nous vous contacterons bientôt',
-    companySubject: '🐾 Nouvelle consultation client - Suivi requis',
+    customerSubject: 'Merci pour votre confiance - Nous vous contacterons bientôt',
+    companySubject: 'Nouvelle consultation client - Suivi requis',
     customerTemplate: (name: string, petType: string, route: string, timeline: string) => `
       <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #4F46E5; margin-bottom: 10px;">💝 Merci pour votre confiance</h1>
+          <h1 style="color: #4F46E5; margin-bottom: 10px;">Merci pour votre confiance</h1>
           <p style="color: #6B7280; font-size: 18px;">Nous vous contacterons bientôt</p>
         </div>
         
         <div style="background: #F9FAFB; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-          <h2 style="color: #1F2937; margin-bottom: 15px;">📋 Nous avons reçu votre demande :</h2>
+          <h2 style="color: #1F2937; margin-bottom: 15px;">Nous avons reçu votre demande :</h2>
           <ul style="color: #6B7280; line-height: 1.6;">
-            <li>🐾 Animal: ${petType}</li>
-            <li>✈️ Route: ${route}</li>
-            <li>⏰ Délai: ${timeline}</li>
+            <li>Animal: ${petType}</li>
+            <li>Route: ${route}</li>
+            <li>Délai: ${timeline}</li>
           </ul>
         </div>
         
         <div style="background: #EEF2FF; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-          <h2 style="color: #1F2937; margin-bottom: 15px;">💝 Notre engagement :</h2>
+          <h2 style="color: #1F2937; margin-bottom: 15px;">Notre engagement :</h2>
           <ul style="color: #4F46E5; line-height: 1.6;">
             <li>✓ Contact sous 24h par un conseiller</li>
             <li>✓ Plan personnalisé pour vous</li>
@@ -116,19 +116,19 @@ const emailTemplates = {
         
         <div style="text-align: center; margin-bottom: 30px;">
           <p style="color: #6B7280; margin-bottom: 15px;">Pour les urgences, contactez-nous :</p>
-          <p style="color: #4F46E5; font-weight: 600;">📞 +1 (555) 123-4567</p>
-          <p style="color: #4F46E5; font-weight: 600;">💬 WeChat: sheepaw_pet</p>
+          <p style="color: #4F46E5; font-weight: 600;">Canada: +1 (249) 688-3003</p>
+          <p style="color: #4F46E5; font-weight: 600;">Chine: +86 135-2285-3556 | WeChat: sheepaw_pet</p>
         </div>
         
         <div style="text-align: center; color: #6B7280; font-size: 14px;">
-          <p>Protégeons ensemble chaque pas de votre compagnon 🐾</p>
+          <p>Protégeons ensemble chaque étape du voyage de votre compagnon</p>
           <p style="margin-top: 10px; font-weight: 600;">L'équipe chaleureuse de Sheepaw</p>
         </div>
       </div>
     `,
     companyTemplate: (name: string, phone: string, email: string, petType: string, route: string, timeline: string, message: string) => `
       <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h1 style="color: #4F46E5;">🐾 Nouvelle consultation client</h1>
+        <h1 style="color: #4F46E5;">Nouvelle consultation client</h1>
         
         <div style="background: #F9FAFB; padding: 20px; border-radius: 12px; margin: 20px 0;">
           <h2 style="color: #1F2937; margin-bottom: 15px;">Informations client :</h2>
@@ -159,26 +159,26 @@ const emailTemplates = {
     }
   },
   en: {
-    customerSubject: '💝 Thank you for your trust - We will contact you soon',
-    companySubject: '🐾 New customer inquiry - Follow-up required',
+    customerSubject: 'Thank you for your trust - We will contact you soon',
+    companySubject: 'New customer inquiry - Follow-up required',
     customerTemplate: (name: string, petType: string, route: string, timeline: string) => `
       <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #4F46E5; margin-bottom: 10px;">💝 Thank you for your trust</h1>
+          <h1 style="color: #4F46E5; margin-bottom: 10px;">Thank you for your trust</h1>
           <p style="color: #6B7280; font-size: 18px;">We will contact you soon</p>
         </div>
         
         <div style="background: #F9FAFB; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-          <h2 style="color: #1F2937; margin-bottom: 15px;">📋 We have received your inquiry:</h2>
+          <h2 style="color: #1F2937; margin-bottom: 15px;">We have received your inquiry:</h2>
           <ul style="color: #6B7280; line-height: 1.6;">
-            <li>🐾 Pet: ${petType}</li>
-            <li>✈️ Route: ${route}</li>
-            <li>⏰ Timeline: ${timeline}</li>
+            <li>Pet: ${petType}</li>
+            <li>Route: ${route}</li>
+            <li>Timeline: ${timeline}</li>
           </ul>
         </div>
         
         <div style="background: #EEF2FF; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-          <h2 style="color: #1F2937; margin-bottom: 15px;">💝 Our commitment:</h2>
+          <h2 style="color: #1F2937; margin-bottom: 15px;">Our commitment:</h2>
           <ul style="color: #4F46E5; line-height: 1.6;">
             <li>✓ Contact within 24h by a consultant</li>
             <li>✓ Personalized plan for you</li>
@@ -189,19 +189,19 @@ const emailTemplates = {
         
         <div style="text-align: center; margin-bottom: 30px;">
           <p style="color: #6B7280; margin-bottom: 15px;">For urgent needs, contact us:</p>
-          <p style="color: #4F46E5; font-weight: 600;">📞 +1 (555) 123-4567</p>
-          <p style="color: #4F46E5; font-weight: 600;">💬 WeChat: sheepaw_pet</p>
+          <p style="color: #4F46E5; font-weight: 600;">Canada: +1 (249) 688-3003</p>
+          <p style="color: #4F46E5; font-weight: 600;">China: +86 135-2285-3556 | WeChat: sheepaw_pet</p>
         </div>
         
         <div style="text-align: center; color: #6B7280; font-size: 14px;">
-          <p>Let's protect every step of your companion's journey together 🐾</p>
+          <p>Let's protect every step of your companion's journey together</p>
           <p style="margin-top: 10px; font-weight: 600;">The warm Sheepaw team</p>
         </div>
       </div>
     `,
     companyTemplate: (name: string, phone: string, email: string, petType: string, route: string, timeline: string, message: string) => `
       <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h1 style="color: #4F46E5;">🐾 New customer inquiry</h1>
+        <h1 style="color: #4F46E5;">New customer inquiry</h1>
         
         <div style="background: #F9FAFB; padding: 20px; border-radius: 12px; margin: 20px 0;">
           <h2 style="color: #1F2937; margin-bottom: 15px;">Customer information:</h2>

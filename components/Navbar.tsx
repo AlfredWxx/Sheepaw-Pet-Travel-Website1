@@ -1,10 +1,13 @@
 'use client'
 
+import React from 'react'
 import { useState, useEffect } from 'react'
-import { Heart, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useI18n } from '@/lib/contexts/I18nContext'
 import LanguageSwitcher from './LanguageSwitcher'
+import Logo from './Logo'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,7 +19,14 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 10)
     }
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false)
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('keydown', handleKey)
+    }
   }, [])
 
   return (
@@ -28,11 +38,8 @@ export default function Navbar() {
       <div className="container-max">
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center space-x-2 group">
-            <div className="p-2 bg-gradient-to-r from-primary-blue to-primary-light rounded-full group-hover:scale-110 transition-transform duration-300">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gradient">Sheepaw</span>
+          <Link href={`/${locale}`} className="flex items-center space-x-2 group" aria-label="Sheepaw home">
+            <Logo />
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,6 +49,9 @@ export default function Navbar() {
             </Link>
             <Link href={`/${locale}#services`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
               {t.nav.services}
+            </Link>
+            <Link href={`/${locale}#about`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
+              {t.nav.about}
             </Link>
             <Link href={`/${locale}#contact`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
               {t.nav.contact}
@@ -56,47 +66,80 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-4 py-4 space-y-4">
-              <Link 
-                href={`/${locale}`} 
-                className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+        {/* Mobile Navigation with overlay and animation */}
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              <motion.div
+                key="overlay"
+                className="fixed inset-0 bg-black/30 md:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 onClick={() => setIsOpen(false)}
+                aria-hidden="true"
+              />
+              <motion.div
+                key="menu"
+                id="mobile-menu"
+                role="dialog"
+                aria-modal="true"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="md:hidden bg-white border-t border-gray-200 relative z-50"
               >
-                {t.nav.home}
-              </Link>
-              <Link 
-                href={`/${locale}#services`} 
-                className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {t.nav.services}
-              </Link>
-              <Link 
-                href={`/${locale}#contact`} 
-                className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {t.nav.contact}
-              </Link>
-              <LanguageSwitcher className="block" />
-              <Link 
-                href={`/${locale}#contact`} 
-                className="btn-primary inline-block"
-                onClick={() => setIsOpen(false)}
-              >
-                {t.nav.freeConsultation}
-              </Link>
-            </div>
-          </div>
-        )}
+                <div className="px-4 py-4 space-y-4">
+                  <Link 
+                    href={`/${locale}`} 
+                    className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t.nav.home}
+                  </Link>
+                  <Link 
+                    href={`/${locale}#services`} 
+                    className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t.nav.services}
+                  </Link>
+                  <Link 
+                    href={`/${locale}#about`} 
+                    className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t.nav.about}
+                  </Link>
+                  <Link 
+                    href={`/${locale}#contact`} 
+                    className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t.nav.contact}
+                  </Link>
+                  <LanguageSwitcher className="block" />
+                  <Link 
+                    href={`/${locale}#contact`} 
+                    className="btn-primary inline-block"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t.nav.freeConsultation}
+                  </Link>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   )

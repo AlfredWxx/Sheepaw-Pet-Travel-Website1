@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Globe, ChevronDown } from 'lucide-react'
 import { useRouter, usePathname } from 'next/navigation'
-import { locales, localeNames, localeFlags, type Locale } from '@/lib/i18n'
+import { locales, localeNames, type Locale } from '@/lib/i18n'
 
 interface LanguageSwitcherProps {
   className?: string
@@ -56,16 +56,19 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-label="Change language"
       >
-        <Globe className="w-4 h-4 text-gray-600" />
+        <Globe className="w-4 h-4 text-gray-600" aria-hidden="true" />
         <span className="text-sm font-medium text-gray-700">
-          {localeFlags[currentLocale]} {localeNames[currentLocale]}
+          {localeNames[currentLocale]}
         </span>
         <ChevronDown className={`w-4 h-4 text-gray-600 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+        <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50" role="listbox" aria-label="Language options">
           {locales.map((locale) => (
             <button
               key={locale}
@@ -74,7 +77,6 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
                 currentLocale === locale ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
               }`}
             >
-              <span className="text-lg">{localeFlags[locale]}</span>
               <span className="text-sm font-medium">{localeNames[locale]}</span>
               {currentLocale === locale && (
                 <div className="ml-auto w-2 h-2 bg-blue-600 rounded-full" />

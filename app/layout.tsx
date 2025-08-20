@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Sheepaw Pet Travel - Professional Pet Transportation Service',
-  description: 'Professional, safe, and caring cross-border pet transportation service between China and Canada. Let us take care of your furry companions.',
-  keywords: 'pet transportation,China-Canada pet transport,pet immigration,pet shipping,Canada pet transport,China pet transport',
+  description: 'Canada ↔ China pet travel agent. FAVN test, CFIA Health Certificate, Animal Health Certificate, CIQ procedures, guidance and premium planning.',
+  keywords: 'pet travel,Canada to China pet travel agent,China to Canada pet travel,FAVN,CFIA health certificate,Animal Health Certificate,CIQ,pet immigration,pet shipping',
   authors: [{ name: 'Sheepaw Pet Travel' }],
   viewport: 'width=device-width, initial-scale=1',
 }

@@ -4,13 +4,14 @@ export const fr = {
     home: 'Accueil',
     services: 'Services',
     contact: 'Contact',
-    freeConsultation: 'Consultation Gratuite'
+    freeConsultation: 'Consultation Gratuite',
+    about: 'À propos'
   },
 
   // Hero section
   hero: {
-    title: 'Un voyage transfrontalier rassurant pour vos compagnons à quatre pattes',
-    subtitle: 'Professionnel, sûr et attentionné - la distance n\'est plus un problème, l\'amour se poursuit dans chaque coin',
+    title: 'Sheepaw Pet Travel',
+    subtitle: 'Nous aidons chaque amoureux des animaux à profiter du monde avec ses compagnons, sans obstacles',
     features: {
       fullProtection: 'Protection complète',
       professionalTransport: 'Transport professionnel',
@@ -25,50 +26,67 @@ export const fr = {
 
   // Services
   services: {
-    title: 'Nos services chaleureux',
-    subtitle: 'Nous offrons des services de transport transfrontalier professionnels, sûrs et attentionnés pour vos compagnons à quatre pattes, rendant chaque voyage chaleureux',
+    title: 'Nos services',
+    subtitle: 'Solutions transfrontalières professionnelles, simples et fiables',
     items: {
       chinaToCanada: {
-        title: '🇨🇳→🇨🇦 Le chemin du retour',
-        description: 'Planifier le voyage de retour le plus sûr pour vos compagnons à quatre pattes',
-        price: '¥8,000-15,000',
-        features: ['Transport professionnel', 'Protection complète', 'Suivi en temps réel']
+        title: 'Chine → Canada Dossier complet',
+        description: 'Coordination avec des cliniques partenaires pour la pose de puce et l\'obtention du certificat de santé animal, procédures CIQ et documents associés',
+        features: [
+          'Pose de puce et contrôle de santé (cliniques partenaires)',
+          'Certificat de santé animal (Animal Health Certificate)',
+          'Procédures CIQ (inspection et quarantaine Chine)',
+          'Suivi de bout en bout et vérification des documents'
+        ]
       },
       canadaToChina: {
-        title: '🇨🇦→🇨🇳 Moment de réunion',
-        description: 'Ne laissez plus la réunion attendre, livraison chaleureuse',
-        price: '¥8,000-15,000',
-        features: ['Escorte sécurisée', 'Service chaleureux', 'Dédouanement rapide']
+        title: 'Canada → Chine Dossier complet',
+        description: 'Coordination de la puce et des vaccins avec des cliniques partenaires, test FAVN et certificat de santé CFIA',
+        features: [
+          'Puce et vaccins (cliniques partenaires)',
+          'Test FAVN (voyage avec animaux)',
+          'Certificat de santé CFIA',
+          'Gestion du calendrier et préparation des documents'
+        ]
       },
       documentService: {
-        title: '📋 Services d\'assistance',
-        description: 'Nous nous occupons des procédures fastidieuses, vous n\'avez qu\'à câliner vos compagnons',
-        price: '¥3,000-5,000',
-        features: ['Assistance procédurale', 'Préparation des documents', 'Conseils professionnels']
+        title: 'Conseils de voyage et planification privée premium',
+        description: 'Conseils pour voyager avec des animaux au Canada et en Chine, plus planification privée haut de gamme',
+        features: [
+          'Politiques et itinéraires (Canada/Chine)',
+          'Planification de voyage privée haut de gamme',
+          'Checklist avant départ et bonnes pratiques'
+        ]
       }
     },
     whyChooseUs: {
       title: 'Pourquoi nous choisir',
-      subtitle: 'Chaque détail reflète notre souci pour vos compagnons à quatre pattes, vous donnant confiance dans votre choix',
+      subtitle: 'Conformité, professionnalisme et efficacité pour une expérience sereine',
       features: {
         caring: {
-          title: 'Soins attentionnés pour chaque compagnon',
-          description: 'Nous comprenons l\'importance de vos compagnons pour vous, chaque détail est soigneusement organisé'
+          title: 'Accompagnement attentif',
+          description: 'Processus transparent et réponse rapide, respect du lien humain‑animal'
         },
         protection: {
-          title: 'Protection complète, tranquillité d\'esprit',
-          description: 'De l\'expédition à l\'arrivée, une équipe professionnelle vous accompagne tout au long du voyage'
+          title: 'Conformité réglementaire et maîtrise des risques',
+          description: 'Respect strict des réglementations et exigences sanitaires des deux pays'
         },
         realtime: {
-          title: 'Partage en temps réel, traces d\'amour',
-          description: 'Mise à jour en temps réel du statut pendant le transport, vous permettant de connaître la situation de vos compagnons à tout moment'
+          title: 'Gestion du calendrier et suivis',
+          description: 'Rappels des jalons et vérification documentaire pour tenir les délais'
         },
         local: {
           title: 'Équipes locales, service local',
-          description: 'Équipes professionnelles en Chine et au Canada, offrant le service le plus attentionné et localisé'
+          description: 'Partenaires locaux en Chine et au Canada pour une communication fluide'
         }
       }
     }
+  },
+
+  // About
+  about: {
+    title: 'À propos',
+    body: 'Nous sommes spécialisés dans le voyage transfrontalier des animaux entre le Canada et la Chine. Avec des cliniques et autorités agréées, nous gérons la puce, les vaccins, le test FAVN, le certificat de santé CFIA, le certificat de santé animal, les procédures CIQ, ainsi que des conseils de voyage et une planification privée premium.'
   },
 
   // Contact form
@@ -76,10 +94,10 @@ export const fr = {
     title: 'Laissez-nous créer un plan personnalisé pour vos compagnons',
     subtitle: 'Remplissez le formulaire ci-dessous, nos conseillers professionnels vous contacteront dans les 24 heures pour planifier le plan de transport le plus approprié pour vos compagnons',
     sections: {
-      aboutYou: '📝 Parlez-nous de vous',
-      aboutPet: '🐾 À propos de vos compagnons',
-      serviceNeeds: '✈️ Vos besoins de service',
-      moreInfo: '💬 Plus d\'informations à nous donner'
+      aboutYou: 'Parlez-nous de vous',
+      aboutPet: 'À propos de vos compagnons',
+      serviceNeeds: 'Vos besoins de service',
+      moreInfo: 'Plus d\'informations'
     },
     fields: {
       name: {
@@ -114,8 +132,8 @@ export const fr = {
         placeholder: 'Veuillez sélectionner la route de transport',
         error: 'Veuillez sélectionner la route de transport',
         options: {
-          chinaToCanada: '🇨🇳 → 🇨🇦 Chine vers Canada',
-          canadaToChina: '🇨🇦 → 🇨🇳 Canada vers Chine',
+          chinaToCanada: 'Chine vers Canada',
+          canadaToChina: 'Canada vers Chine',
           other: 'Autre route'
         }
       },
@@ -150,13 +168,14 @@ export const fr = {
 
   // Footer
   footer: {
-    description: 'Nous comprenons l\'importance de vos compagnons pour vous, chaque détail est soigneusement organisé. La distance n\'est plus un problème, l\'amour se poursuit dans chaque coin.',
+    description: 'Nous savons l\'importance de vos compagnons. Grâce à la conformité, au professionnalisme et à l\'efficacité, nous facilitons les voyages transfrontaliers.',
     quickLinks: 'Liens rapides',
     contactInfo: 'Informations de contact',
     phone: 'Téléphone',
     email: 'Email',
     address: 'Adresse',
-    addressValue: 'Canada & Chine',
+    addressCA: 'Canada : 610 Academy Way, Kelowna, BC, V1V 0E8',
+    addressCN: 'Chine : Pékin, Chaoyang, 10A Guanghua Rd',
     copyright: '© 2024 Sheepaw Pet Travel. Tous droits réservés.',
     privacy: 'Politique de confidentialité',
     terms: 'Conditions de service',

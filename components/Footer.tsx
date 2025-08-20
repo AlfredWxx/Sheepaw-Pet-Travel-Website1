@@ -1,8 +1,10 @@
 'use client'
 
-import { Heart, Mail, Phone, MapPin, Globe } from 'lucide-react'
+import React from 'react'
+import { Heart, Mail, Phone, MapPin } from 'lucide-react'
 import Link from 'next/link'
 import { useI18n } from '@/lib/contexts/I18nContext'
+import Logo from './Logo'
 
 export default function Footer() {
   const { t, locale } = useI18n()
@@ -14,21 +16,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="p-2 bg-gradient-to-r from-primary-blue to-primary-light rounded-full">
-                <Heart className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold">Sheepaw</span>
+              <Logo />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
               {t.footer.description}
             </p>
-            <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-blue to-primary-light rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                <Heart className="w-5 h-5 text-white" />
-              </div>
-              <div className="w-10 h-10 bg-gradient-to-r from-accent-orange to-accent-warm rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                <Globe className="w-5 h-5 text-white" />
-              </div>
+            <div className="flex space-x-4" aria-hidden="true">
+              <div className="w-10 h-10 bg-gradient-to-r from-primary-blue to-primary-light rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" />
+              <div className="w-10 h-10 bg-gradient-to-r from-accent-orange to-accent-warm rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" />
             </div>
           </div>
 
@@ -47,13 +42,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#contact`} className="text-gray-300 hover:text-white transition-colors duration-200">
-                  {t.nav.contact}
+                <Link href={`/${locale}#about`} className="text-gray-300 hover:text-white transition-colors duration-200">
+                  {t.nav.about}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#about`} className="text-gray-300 hover:text-white transition-colors duration-200">
-                  {t.footer.quickLinks}
+                <Link href={`/${locale}#contact`} className="text-gray-300 hover:text-white transition-colors duration-200">
+                  {t.nav.contact}
                 </Link>
               </li>
             </ul>
@@ -69,7 +64,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm">{t.footer.phone}</p>
-                  <p className="text-white">+1 (555) 123-4567</p>
+                  <p className="text-white">Canada (+1) 249-688-3003 / China (+86) 135-2285-3556</p>
                 </div>
               </li>
               <li className="flex items-center space-x-3">
@@ -78,7 +73,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm">{t.footer.email}</p>
-                  <p className="text-white">hello@sheepaw.com</p>
+                  <p className="text-white">alfredwuxx@gmail.com</p>
                 </div>
               </li>
               <li className="flex items-center space-x-3">
@@ -87,7 +82,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-gray-300 text-sm">{t.footer.address}</p>
-                  <p className="text-white">{t.footer.addressValue}</p>
+                  <p className="text-white">{t.footer.addressCA}</p>
+                  <p className="text-white mt-1">{t.footer.addressCN}</p>
                 </div>
               </li>
             </ul>

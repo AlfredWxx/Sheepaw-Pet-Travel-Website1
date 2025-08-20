@@ -52,7 +52,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-br from-blue-50 to-purple-50">
+    <section id="contact" className="section-padding bg-gradient-to-br from-blue-50 to-purple-50 scroll-mt-24">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

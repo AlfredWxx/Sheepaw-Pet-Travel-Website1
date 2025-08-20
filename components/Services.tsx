@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Plane, Home, FileText, Heart, Shield, Clock, Users } from 'lucide-react'
 import { useI18n } from '@/lib/contexts/I18nContext'
@@ -7,13 +8,23 @@ import { useI18n } from '@/lib/contexts/I18nContext'
 export default function Services() {
   const { t } = useI18n()
 
-  const services = [
+  type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>
+
+  interface ServiceItem {
+    id: number
+    icon: IconComponent
+    title: string
+    description: string
+    features: string[]
+    color: string
+  }
+
+  const services: ServiceItem[] = [
     {
       id: 1,
       icon: Plane,
       title: t.services.items.chinaToCanada.title,
       description: t.services.items.chinaToCanada.description,
-      price: t.services.items.chinaToCanada.price,
       features: t.services.items.chinaToCanada.features,
       color: "from-primary-blue to-primary-light"
     },
@@ -22,7 +33,6 @@ export default function Services() {
       icon: Home,
       title: t.services.items.canadaToChina.title,
       description: t.services.items.canadaToChina.description,
-      price: t.services.items.canadaToChina.price,
       features: t.services.items.canadaToChina.features,
       color: "from-primary-light to-accent-orange"
     },
@@ -31,13 +41,12 @@ export default function Services() {
       icon: FileText,
       title: t.services.items.documentService.title,
       description: t.services.items.documentService.description,
-      price: t.services.items.documentService.price,
       features: t.services.items.documentService.features,
       color: "from-accent-orange to-accent-warm"
     }
   ]
 
-  const features = [
+  const features: { icon: IconComponent; title: string; description: string }[] = [
     {
       icon: Heart,
       title: t.services.whyChooseUs.features.caring.title,
@@ -61,7 +70,7 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="section-padding bg-white">
+    <section id="services" className="section-padding bg-white scroll-mt-24">
       <div className="container-max">
         {/* Section Header */}
         <motion.div
@@ -100,9 +109,7 @@ export default function Services() {
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   {service.description}
                 </p>
-                <div className="text-2xl font-bold text-gradient mb-4">
-                  {service.price}
-                </div>
+                {/* no price display per requirement */}
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
