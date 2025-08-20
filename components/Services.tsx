@@ -26,7 +26,7 @@ export default function Services() {
       title: t.services.items.chinaToCanada.title,
       description: t.services.items.chinaToCanada.description,
       features: t.services.items.chinaToCanada.features,
-      color: "from-primary-blue to-primary-light"
+      color: "from-sheepaw-blue to-primary-light"
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ export default function Services() {
       title: t.services.items.canadaToChina.title,
       description: t.services.items.canadaToChina.description,
       features: t.services.items.canadaToChina.features,
-      color: "from-primary-light to-accent-orange"
+      color: "from-primary-light to-sheepaw-orange"
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ export default function Services() {
       title: t.services.items.documentService.title,
       description: t.services.items.documentService.description,
       features: t.services.items.documentService.features,
-      color: "from-accent-orange to-accent-warm"
+      color: "from-sheepaw-orange to-accent-light"
     }
   ]
 
@@ -70,7 +70,7 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="section-padding bg-white scroll-mt-24">
+    <section id="services" className="section-padding bg-white scroll-mt-24 md:scroll-mt-28 lg:scroll-mt-32">
       <div className="container-max">
         {/* Section Header */}
         <motion.div
@@ -103,7 +103,7 @@ export default function Services() {
                 <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-text-dark mb-3 group-hover:text-primary-blue transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-text-dark mb-3 group-hover:text-sheepaw-blue transition-colors duration-300">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
@@ -112,10 +112,10 @@ export default function Services() {
                 {/* no price display per requirement */}
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-primary-blue rounded-full" />
-                      <span>{feature}</span>
-                    </li>
+                                    <li key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-sheepaw-blue rounded-full" />
+                  <span>{feature}</span>
+                </li>
                   ))}
                 </ul>
               </div>
@@ -150,7 +150,7 @@ export default function Services() {
                 viewport={{ once: true }}
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-blue to-primary-light rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-to-r from-sheepaw-blue to-primary-light rounded-xl flex items-center justify-center flex-shrink-0">
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>

@@ -10,47 +10,105 @@
   }
   
   body {
-    @apply bg-gray-light text-text-dark;
+    @apply bg-sheepaw-gray text-text-dark;
   }
 }
 
 @layer components {
+  /* 主要按钮样式 - 使用Sheepaw品牌色 */
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-blue to-primary-light text-white font-semibold px-6 py-3 rounded-lg shadow-warm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+    @apply bg-gradient-to-r from-sheepaw-blue to-primary-light text-white font-semibold px-6 py-3 rounded-lg shadow-sheepaw hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
   }
   
+  /* 次要按钮样式 */
   .btn-secondary {
-    @apply bg-white text-primary-blue border-2 border-primary-blue font-semibold px-6 py-3 rounded-lg hover:bg-primary-blue hover:text-white transition-all duration-300;
+    @apply bg-white text-sheepaw-blue border-2 border-sheepaw-blue font-semibold px-6 py-3 rounded-lg hover:bg-sheepaw-blue hover:text-white transition-all duration-300;
   }
   
+  /* 温暖按钮样式 - 使用Sheepaw Orange */
   .btn-warm {
-    @apply bg-gradient-to-r from-accent-orange to-accent-warm text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+    @apply bg-gradient-to-r from-sheepaw-orange to-accent-light text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
   }
   
+  /* 品牌按钮样式 - 使用Sheepaw品牌渐变 */
+  .btn-brand {
+    @apply bg-gradient-to-r from-sheepaw-blue to-sheepaw-orange text-white font-semibold px-6 py-3 rounded-lg shadow-sheepaw hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  /* 卡片悬停效果 */
   .card-hover {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
   }
   
-  .input-field {
-    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-blue focus:outline-none transition-colors duration-200 placeholder-gray-400;
+  /* Sheepaw品牌卡片悬停效果 */
+  .card-sheepaw-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-sheepaw border-sheepaw-blue/20;
   }
   
+  /* 输入框样式 */
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sheepaw-blue focus:outline-none transition-colors duration-200 placeholder-gray-400;
+  }
+  
+  /* Sheepaw品牌输入框样式 */
+  .input-sheepaw {
+    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-sheepaw-blue focus:outline-none transition-colors duration-200 placeholder-gray-400 focus:ring-2 focus:ring-sheepaw-blue/20;
+  }
+  
+  /* 区域间距 */
   .section-padding {
     @apply py-16 px-4 sm:px-6 lg:px-8;
   }
   
+  /* 容器最大宽度 */
   .container-max {
     @apply max-w-7xl mx-auto;
+  }
+  
+  /* Sheepaw品牌渐变文本 */
+  .text-sheepaw-gradient {
+    @apply bg-gradient-to-r from-sheepaw-blue to-sheepaw-orange bg-clip-text text-transparent;
+  }
+  
+  /* Sheepaw品牌背景 */
+  .bg-sheepaw-gradient {
+    @apply bg-gradient-to-r from-sheepaw-blue to-sheepaw-orange;
+  }
+  
+  /* Sheepaw品牌边框 */
+  .border-sheepaw {
+    @apply border-2 border-sheepaw-blue;
   }
 }
 
 @layer utilities {
+  /* 文本渐变效果 */
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-blue to-primary-light bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-sheepaw-blue to-primary-light bg-clip-text text-transparent;
   }
   
+  /* Sheepaw品牌阴影 */
+  .shadow-sheepaw {
+    box-shadow: 0 8px 25px -5px rgba(91, 130, 214, 0.15);
+  }
+  
+  /* 温暖阴影 */
   .shadow-warm {
-    box-shadow: 0 8px 25px -5px rgba(79, 70, 229, 0.1);
+    box-shadow: 0 8px 25px -5px rgba(91, 130, 214, 0.1);
+  }
+  
+  /* Sheepaw品牌动画 */
+  .animate-sheepaw-pulse {
+    animation: sheepawPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes sheepawPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
 

@@ -52,7 +52,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-br from-blue-50 to-purple-50 scroll-mt-24">
+    <section id="contact" className="section-padding bg-gradient-to-br from-blue-50 to-purple-50 scroll-mt-24 md:scroll-mt-28 lg:scroll-mt-32">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export default function ContactForm() {
                       {...register('name')}
                       type="text"
                       placeholder={t.contact.fields.name.placeholder}
-                      className="input-field"
+                      className="input-sheepaw"
                     />
                     {errors.name && (
                       <p className="mt-1 text-sm text-error flex items-center space-x-1">
@@ -114,7 +114,7 @@ export default function ContactForm() {
                       {...register('phone')}
                       type="tel"
                       placeholder={t.contact.fields.phone.placeholder}
-                      className="input-field"
+                      className="input-sheepaw"
                     />
                     {errors.phone && (
                       <p className="mt-1 text-sm text-error flex items-center space-x-1">
@@ -130,9 +130,9 @@ export default function ContactForm() {
                   </label>
                   <input
                     {...register('email')}
-                    type="email"
-                    placeholder={t.contact.fields.email.placeholder}
-                    className="input-field"
+                                          type="email"
+                      placeholder={t.contact.fields.email.placeholder}
+                      className="input-sheepaw"
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-error flex items-center space-x-1">
@@ -157,7 +157,7 @@ export default function ContactForm() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     {t.contact.fields.petType.label} <span className="text-error">*</span>
                   </label>
-                  <select {...register('petType')} className="input-field">
+                                      <select {...register('petType')} className="input-sheepaw">
                     <option value="">{t.contact.fields.petType.placeholder}</option>
                     <option value="dog">{t.contact.fields.petType.options.dog}</option>
                     <option value="cat">{t.contact.fields.petType.options.cat}</option>
@@ -189,7 +189,7 @@ export default function ContactForm() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       {t.contact.fields.route.label} <span className="text-error">*</span>
                     </label>
-                    <select {...register('route')} className="input-field">
+                    <select {...register('route')} className="input-sheepaw">
                       <option value="">{t.contact.fields.route.placeholder}</option>
                       <option value="china-to-canada">{t.contact.fields.route.options.chinaToCanada}</option>
                       <option value="canada-to-china">{t.contact.fields.route.options.canadaToChina}</option>
@@ -206,7 +206,7 @@ export default function ContactForm() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       {t.contact.fields.timeline.label} <span className="text-error">*</span>
                     </label>
-                    <select {...register('timeline')} className="input-field">
+                    <select {...register('timeline')} className="input-sheepaw">
                       <option value="">{t.contact.fields.timeline.placeholder}</option>
                       <option value="asap">{t.contact.fields.timeline.options.asap}</option>
                       <option value="1-month">{t.contact.fields.timeline.options.oneMonth}</option>
@@ -242,7 +242,7 @@ export default function ContactForm() {
                     {...register('message')}
                     rows={4}
                     placeholder={t.contact.fields.message.placeholder}
-                    className="input-field resize-none"
+                                          className="input-sheepaw resize-none"
                   />
                   {errors.message && (
                     <p className="mt-1 text-sm text-error flex items-center space-x-1">

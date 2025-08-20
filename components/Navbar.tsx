@@ -4,6 +4,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useI18n } from '@/lib/contexts/I18nContext'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -36,30 +37,40 @@ export default function Navbar() {
         : 'bg-transparent'
     }`}>
       <div className="container-max">
-        <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20 lg:h-24 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center space-x-2 group" aria-label="Sheepaw home">
-            <Logo />
+            <Logo size="auto" variant="transparent" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href={`/${locale}`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <Link href={`/${locale}`} className="text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium text-sm lg:text-base">
               {t.nav.home}
             </Link>
-            <Link href={`/${locale}#services`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
+            <Link href={`/${locale}#services`} className="text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium text-sm lg:text-base">
               {t.nav.services}
             </Link>
-            <Link href={`/${locale}#about`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
+            <Link href={`/${locale}#about`} className="text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium text-sm lg:text-base">
               {t.nav.about}
             </Link>
-            <Link href={`/${locale}#contact`} className="text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium">
+            <Link href={`/${locale}#contact`} className="text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium text-sm lg:text-base">
               {t.nav.contact}
             </Link>
             <LanguageSwitcher />
-            <Link href={`/${locale}#contact`} className="btn-primary">
-              {t.nav.freeConsultation}
-            </Link>
+            <div className="flex items-center space-x-3">
+              <Link href={`/${locale}#contact`} className="btn-primary text-sm lg:text-base px-4 py-2 lg:px-6 lg:py-3">
+                {t.nav.freeConsultation}
+              </Link>
+              <Image
+                src="/proudly-canadian-fierement-canadien-badge.svg"
+                alt="Proudly Canadian"
+                width={0}
+                height={0}
+                className="h-10 w-auto md:h-14 lg:h-16 object-contain"
+                priority
+              />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,40 +112,49 @@ export default function Navbar() {
                 <div className="px-4 py-4 space-y-4">
                   <Link 
                     href={`/${locale}`} 
-                    className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {t.nav.home}
                   </Link>
                   <Link 
                     href={`/${locale}#services`} 
-                    className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {t.nav.services}
                   </Link>
                   <Link 
                     href={`/${locale}#about`} 
-                    className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {t.nav.about}
                   </Link>
                   <Link 
                     href={`/${locale}#contact`} 
-                    className="block text-gray-700 hover:text-primary-blue transition-colors duration-200 font-medium"
+                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {t.nav.contact}
                   </Link>
-                  <LanguageSwitcher className="block" />
-                  <Link 
-                    href={`/${locale}#contact`} 
-                    className="btn-primary inline-block"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {t.nav.freeConsultation}
-                  </Link>
+                  <div className="flex items-center space-x-3 pt-4">
+                    <Link 
+                      href={`/${locale}#contact`} 
+                      className="btn-primary text-sm px-4 py-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {t.nav.freeConsultation}
+                    </Link>
+                    <Image
+                      src="/proudly-canadian-fierement-canadien-badge.svg"
+                      alt="Proudly Canadian"
+                      width={0}
+                      height={0}
+                      className="h-10 w-auto object-contain"
+                      priority
+                    />
+                  </div>
                 </div>
               </motion.div>
             </>
