@@ -184,7 +184,7 @@ export default function CaseDetailPage() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 shadow-lg"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.caseDetail?.caseDetails ?? 'Case Details'}</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.cases?.details?.caseDetails ?? 'Case Details'}</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-center space-x-3">
                     <MapPin className="w-5 h-5 text-sheepaw-blue" />
@@ -213,7 +213,7 @@ export default function CaseDetailPage() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 shadow-lg"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.caseDetail?.description ?? 'Case Description'}</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.cases?.details?.description ?? 'Case Description'}</h2>
                 <p className="text-gray-600 leading-relaxed text-lg">
                   {t.caseDetail?.[slug as keyof typeof t.caseDetail]?.description || caseDetail.description}
                 </p>
@@ -228,7 +228,7 @@ export default function CaseDetailPage() {
                   viewport={{ once: true }}
                   className="bg-white rounded-2xl p-8 shadow-lg"
                 >
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.caseDetail?.challenges ?? 'Challenges'}</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.cases?.details?.challenges ?? 'Challenges'}</h2>
                   <div className="space-y-4">
                     {caseDetail.challenges.map((challenge, index) => (
                       <div key={index} className="flex items-start space-x-3">
@@ -246,7 +246,7 @@ export default function CaseDetailPage() {
                   viewport={{ once: true }}
                   className="bg-white rounded-2xl p-8 shadow-lg"
                 >
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.caseDetail?.solutions ?? 'Solutions'}</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.cases?.details?.solutions ?? 'Solutions'}</h2>
                   <div className="space-y-4">
                     {caseDetail.solutions.map((solution, index) => (
                       <div key={index} className="flex items-start space-x-3">
@@ -266,7 +266,7 @@ export default function CaseDetailPage() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 shadow-lg"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.caseDetail?.timeline ?? 'Timeline'}</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.cases?.details?.timeline ?? 'Timeline'}</h2>
                 <div className="space-y-6">
                   {caseDetail.timeline.map((item, index) => (
                     <div key={index} className="flex items-start space-x-4">
@@ -290,7 +290,7 @@ export default function CaseDetailPage() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-sheepaw-orange to-accent-light text-white rounded-2xl p-8 shadow-lg"
               >
-                <h2 className="text-2xl font-bold mb-6">{t.caseDetail?.testimonial ?? 'Client Testimonial'}</h2>
+                <h2 className="text-2xl font-bold mb-6">{t.cases?.details?.testimonial ?? 'Client Testimonial'}</h2>
                 <div className="flex items-center space-x-2 mb-4">
                   {[...Array(caseDetail.testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-current" />
@@ -311,18 +311,18 @@ export default function CaseDetailPage() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 shadow-lg"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">{t.caseDetail?.quickInfo ?? 'Quick Info'}</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">{t.cases?.details?.quickInfo ?? 'Quick Info'}</h3>
                 <div className="space-y-3">
                   <div>
-                    <span className="text-sm text-gray-500">{t.caseDetail?.petName ?? 'Pet Name'}</span>
+                    <span className="text-sm text-gray-500">{t.cases?.details?.petName ?? 'Pet Name'}</span>
                     <p className="font-medium">{t.caseDetail?.[slug as keyof typeof t.caseDetail]?.petName || caseDetail.petName}</p>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500">{t.caseDetail?.route ?? 'Route'}</span>
+                    <span className="text-sm text-gray-500">{t.cases?.details?.route ?? 'Route'}</span>
                     <p className="font-medium">{t.caseDetail?.[slug as keyof typeof t.caseDetail]?.route || caseDetail.route}</p>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500">{t.caseDetail?.duration ?? 'Duration'}</span>
+                    <span className="text-sm text-gray-500">{t.cases?.details?.duration ?? 'Duration'}</span>
                     <p className="font-medium">{t.caseDetail?.[slug as keyof typeof t.caseDetail]?.duration || caseDetail.duration}</p>
                   </div>
                 </div>
@@ -336,8 +336,8 @@ export default function CaseDetailPage() {
                 viewport={{ once: true }}
                 className="bg-sheepaw-blue text-white rounded-2xl p-6 shadow-lg text-center"
               >
-                <h3 className="text-lg font-semibold mb-4">{t.caseDetail?.startYourJourney ?? 'Start Your Journey'}</h3>
-                <p className="text-white/90 mb-6">{t.caseDetail?.contactUsForConsultation ?? 'Contact us for a free consultation'}</p>
+                <h3 className="text-lg font-semibold mb-4">{t.cases?.details?.startYourJourney ?? 'Start Your Journey'}</h3>
+                <p className="text-white/90 mb-6">{t.cases?.details?.contactUsForConsultation ?? 'Contact us for a free consultation'}</p>
                 <Link 
                   href={`/${locale}#contact`} 
                   className="btn-secondary bg-white text-sheepaw-blue hover:bg-gray-100 w-full"

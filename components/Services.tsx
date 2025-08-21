@@ -27,7 +27,7 @@ export default function Services() {
       icon: Plane,
       title: t.services?.chinaToCanada?.title || '中国到加拿大',
       description: t.services?.chinaToCanada?.description || '全流程证件代办',
-      features: t.services?.chinaToCanada?.features || [],
+      features: [],
       color: "from-sheepaw-blue to-primary-light",
       slug: "china-to-canada"
     },
@@ -36,7 +36,7 @@ export default function Services() {
       icon: Home,
       title: t.services?.canadaToChina?.title || '加拿大到中国',
       description: t.services?.canadaToChina?.description || '全流程证件代办',
-      features: t.services?.canadaToChina?.features || [],
+      features: [],
       color: "from-primary-light to-sheepaw-orange",
       slug: "canada-to-china"
     },
@@ -45,7 +45,7 @@ export default function Services() {
       icon: FileText,
       title: t.services?.documentService?.title || '宠物旅行指导',
       description: t.services?.documentService?.description || '高端私人定制',
-      features: t.services?.documentService?.features || [],
+      features: [],
       color: "from-sheepaw-orange to-accent-light",
       slug: "document-service"
     }

@@ -62,7 +62,7 @@ export default function Hero() {
                 playsInline
                 onPlay={handleVideoPlay}
                 onPause={handleVideoPause}
-                poster={mediaItems[currentIndex].poster}
+                poster=""
                 aria-label="Sheepaw Pet Travel hero video"
                 title="Sheepaw Pet Travel hero video"
               >
@@ -71,7 +71,7 @@ export default function Hero() {
             ) : (
               <img
                 src={mediaItems[currentIndex].src}
-                alt={mediaItems[currentIndex].alt}
+                alt="Hero image"
                 className="w-full h-full object-cover"
               />
             )}

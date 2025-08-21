@@ -70,15 +70,15 @@ export default function ContactForm() {
     {
       step: 3,
       icon: Users,
-      title: t.process?.steps?.documents?.title ?? 'Document Processing',
-      description: t.process?.steps?.documents?.description ?? 'Assist with all necessary health checks and document procedures',
+      title: t.process?.steps?.preparation?.title ?? 'Document Processing',
+      description: t.process?.steps?.preparation?.description ?? 'Assist with all necessary health checks and document procedures',
       color: 'from-sheepaw-orange to-accent-light'
     },
     {
       step: 4,
       icon: Plane,
-      title: t.process?.steps?.transport?.title ?? 'Transport Arrangement',
-      description: t.process?.steps?.transport?.description ?? 'Arrange flight transport and full care services',
+      title: t.process?.steps?.transportation?.title ?? 'Transport Arrangement',
+      description: t.process?.steps?.transportation?.description ?? 'Arrange flight transport and full care services',
       color: 'from-accent-light to-sheepaw-blue'
     },
     {
@@ -378,12 +378,12 @@ export default function ContactForm() {
                     {isSubmitting ? (
                       <div className="flex items-center space-x-2">
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        <span>{t.contact.submitting}</span>
+                        <span>{t.contact.form.submit}</span>
                       </div>
                     ) : (
                       <div className="flex items-center space-x-2">
                         <Send className="w-5 h-5" />
-                        <span>{t.contact.submit}</span>
+                        <span>{t.contact.form.submit}</span>
                       </div>
                     )}
                   </button>
@@ -398,7 +398,7 @@ export default function ContactForm() {
                   >
                     <div className="flex items-center justify-center space-x-2 text-success">
                       <CheckCircle className="w-5 h-5" />
-                      <span className="font-medium">{t.contact.success}</span>
+                      <span className="font-medium">{t.contact.form.success}</span>
                     </div>
                   </motion.div>
                 )}
@@ -411,7 +411,7 @@ export default function ContactForm() {
                   >
                     <div className="flex items-center justify-center space-x-2 text-error">
                       <AlertCircle className="w-5 h-5" />
-                      <span className="font-medium">{t.contact.error}</span>
+                      <span className="font-medium">{t.contact.form.error}</span>
                     </div>
                   </motion.div>
                 )}
@@ -419,7 +419,7 @@ export default function ContactForm() {
                 {/* Contact Info */}
                 <div className="text-center pt-6 border-t border-gray-200">
                   <p className="text-gray-600 mb-4">
-                    {t.contact.emergency}
+                    {'Need immediate assistance? Contact us directly:'}
                   </p>
                   <div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
                     <div className="flex items-center space-x-2">

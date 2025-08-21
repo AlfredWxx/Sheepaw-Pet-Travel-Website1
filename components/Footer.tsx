@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">{t.footer.quickLinks}</h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <Link href={`/${locale}`} className="text-gray-300 hover:text-white transition-colors duration-200">
@@ -56,14 +56,14 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">{t.footer.contactInfo}</h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-primary-blue to-primary-light rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <p className="text-gray-300 text-sm">{t.footer.phone}</p>
+                  <p className="text-gray-300 text-sm">Phone</p>
                   <p className="text-white">Canada (+1) 249-688-3003 / China (+86) 135-2285-3556</p>
                 </div>
               </li>
@@ -72,7 +72,7 @@ export default function Footer() {
                   <Mail className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <p className="text-gray-300 text-sm">{t.footer.email}</p>
+                  <p className="text-gray-300 text-sm">Email</p>
                   <p className="text-white">alfredwuxx@gmail.com</p>
                 </div>
               </li>
@@ -81,9 +81,9 @@ export default function Footer() {
                   <MapPin className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <p className="text-gray-300 text-sm">{t.footer.address}</p>
-                  <p className="text-white">{t.footer.addressCA}</p>
-                  <p className="text-white mt-1">{t.footer.addressCN}</p>
+                  <p className="text-gray-300 text-sm">Address</p>
+                  <p className="text-white">Canada Office</p>
+                  <p className="text-white mt-1">China Office</p>
                 </div>
               </li>
             </ul>
@@ -98,14 +98,14 @@ export default function Footer() {
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <Link href={`/${locale}/privacy`} className="hover:text-white transition-colors duration-200">
-                {t.footer.privacy}
+                {t.footer.links.privacy}
               </Link>
               <Link href={`/${locale}/terms`} className="hover:text-white transition-colors duration-200">
-                {t.footer.terms}
+                {t.footer.links.terms}
               </Link>
               <div className="flex items-center space-x-2">
                 <Heart className="w-4 h-4 text-accent-orange" />
-                <span>{t.footer.slogan}</span>
+                <span>Made with love</span>
               </div>
             </div>
           </div>
