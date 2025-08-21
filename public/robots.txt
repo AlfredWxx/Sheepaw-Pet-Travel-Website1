@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sheepaw-pet-travel.vercel.app
+
+# Sitemaps
+Sitemap: https://sheepaw-pet-travel.vercel.app/sitemap.xml

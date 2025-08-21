@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Canada ↔ China pet travel agent. FAVN test, CFIA Health Certificate, Animal Health Certificate, CIQ procedures, guidance and premium planning.',
   keywords: 'pet travel,Canada to China pet travel agent,China to Canada pet travel,FAVN,CFIA health certificate,Animal Health Certificate,CIQ,pet immigration,pet shipping',
   authors: [{ name: 'Sheepaw Pet Travel' }],
-  viewport: 'width=device-width, initial-scale=1',
+  metadataBase: new URL('https://sheepaw-pet-travel.vercel.app'),
   icons: {
     icon: '/Sheepaw Logo2 Transparent.svg',
     shortcut: '/Sheepaw Logo2 Transparent.svg',
@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     description: 'Canada ↔ China pet travel agent. FAVN test, CFIA Health Certificate, Animal Health Certificate, CIQ procedures, guidance and premium planning.',
     images: ['/Sheepaw Logo2 Transparent.svg'],
   },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

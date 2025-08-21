@@ -54,23 +54,23 @@ export default function Services() {
   const features: { icon: IconComponent; title: string; description: string }[] = [
     {
       icon: Heart,
-      title: t.services?.whyChooseUs?.features?.caring?.title || '贴心服务',
-      description: t.services?.whyChooseUs?.features?.caring?.description || '全程专业照顾您的宠物'
+      title: '贴心服务',
+      description: '全程专业照顾您的宠物'
     },
     {
       icon: Shield,
-      title: t.services?.whyChooseUs?.features?.protection?.title || '安全保障',
-      description: t.services?.whyChooseUs?.features?.protection?.description || '完善的安全保障体系'
+      title: '安全保障',
+      description: '完善的安全保障体系'
     },
     {
       icon: Clock,
-      title: t.services?.whyChooseUs?.features?.realtime?.title || '实时跟踪',
-      description: t.services?.whyChooseUs?.features?.realtime?.description || '全程实时跟踪宠物状态'
+      title: '实时跟踪',
+      description: '全程实时跟踪宠物状态'
     },
     {
       icon: Users,
-      title: t.services?.whyChooseUs?.features?.local?.title || '本地团队',
-      description: t.services?.whyChooseUs?.features?.local?.description || '两地专业团队服务'
+      title: '本地团队',
+      description: '两地专业团队服务'
     }
   ]
 
@@ -148,10 +148,10 @@ export default function Services() {
             className="text-center mb-12"
           >
             <h3 className="text-2xl md:text-3xl font-bold text-text-dark mb-4">
-              {t.services?.whyChooseUs?.title || '为什么选择我们'}
+              为什么选择我们
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              {t.services?.whyChooseUs?.subtitle || '专业、安全、贴心的宠物运输服务'}
+              专业、安全、贴心的宠物运输服务
             </p>
           </motion.div>
           
