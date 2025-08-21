@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, ReactNode } from 'react'
-import { getTranslation, type Translation } from '../translations'
+import translations, { type Translation } from '../translations'
 import { defaultLocale, type Locale } from '../i18n'
 
 interface I18nContextType {
@@ -10,7 +10,7 @@ interface I18nContextType {
 }
 
 const I18nContext = createContext<I18nContextType>({
-  t: getTranslation(defaultLocale),
+  t: translations[defaultLocale],
   locale: defaultLocale
 })
 
@@ -20,7 +20,7 @@ interface I18nProviderProps {
 }
 
 export function I18nProvider({ children, locale }: I18nProviderProps) {
-  const t = getTranslation(locale)
+  const t = translations[locale] || translations[defaultLocale]
 
   return (
     <I18nContext.Provider value={{ t, locale }}>

@@ -1,17 +1,15 @@
-import { zh } from './zh'
-import { fr } from './fr'
-import { en } from './en'
-import type { Locale } from '../i18n'
+import zh from './zh'
+import en from './en'
+import fr from './fr'
 
 export const translations = {
   zh,
-  fr,
-  en
-} as const
+  en,
+  fr
+}
 
+export type Locale = keyof typeof translations
 export type Translation = typeof zh
 
-export function getTranslation(locale: Locale): Translation {
-  return translations[locale] || translations.zh
-}
+export default translations
 

@@ -44,7 +44,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <Link href={`/${locale}`} className="text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium text-sm lg:text-base">
               {t.nav.home}
             </Link>
@@ -58,8 +58,8 @@ export default function Navbar() {
               {t.nav.contact}
             </Link>
             <LanguageSwitcher />
-            <div className="flex items-center space-x-3">
-              <Link href={`/${locale}#contact`} className="btn-primary text-sm lg:text-base px-4 py-2 lg:px-6 lg:py-3">
+            <div className="flex items-center space-x-2 lg:space-x-3">
+              <Link href={`/${locale}#contact`} className="btn-primary text-sm lg:text-base px-3 py-2 lg:px-5 lg:py-2.5">
                 {t.nav.freeConsultation}
               </Link>
               <Image
@@ -67,7 +67,7 @@ export default function Navbar() {
                 alt="Proudly Canadian"
                 width={0}
                 height={0}
-                className="h-10 w-auto md:h-14 lg:h-16 object-contain"
+                className="h-8 w-auto md:h-12 lg:h-14 object-contain"
                 priority
               />
             </div>
@@ -109,39 +109,48 @@ export default function Navbar() {
                 transition={{ duration: 0.2 }}
                 className="md:hidden bg-white border-t border-gray-200 relative z-50"
               >
-                <div className="px-4 py-4 space-y-4">
+                <div className="px-4 py-4 space-y-3">
                   <Link 
                     href={`/${locale}`} 
-                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium"
+                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium py-2"
                     onClick={() => setIsOpen(false)}
                   >
                     {t.nav.home}
                   </Link>
                   <Link 
                     href={`/${locale}#services`} 
-                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium"
+                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium py-2"
                     onClick={() => setIsOpen(false)}
                   >
                     {t.nav.services}
                   </Link>
                   <Link 
                     href={`/${locale}#about`} 
-                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium"
+                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium py-2"
                     onClick={() => setIsOpen(false)}
                   >
                     {t.nav.about}
                   </Link>
                   <Link 
                     href={`/${locale}#contact`} 
-                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium"
+                    className="block text-gray-700 hover:text-sheepaw-blue transition-colors duration-200 font-medium py-2"
                     onClick={() => setIsOpen(false)}
                   >
                     {t.nav.contact}
                   </Link>
+                  
+                  {/* Mobile Language Switcher */}
+                  <div className="pt-2 border-t border-gray-200">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-600 font-medium">{t.common?.language ?? 'Language / 语言'}</span>
+                      <LanguageSwitcher />
+                    </div>
+                  </div>
+                  
                   <div className="flex items-center space-x-3 pt-4">
                     <Link 
                       href={`/${locale}#contact`} 
-                      className="btn-primary text-sm px-4 py-2"
+                      className="btn-primary text-sm px-4 py-2 flex-1 text-center"
                       onClick={() => setIsOpen(false)}
                     >
                       {t.nav.freeConsultation}
